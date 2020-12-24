@@ -33,7 +33,7 @@ public class MovieController {
         return service.addMovie(movie);
     }
 
-    @GetMapping(value = "/{id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping(value = "/{id}/event", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<MovieEvent> getMovieEvents(@PathVariable("id") String id) {
         return service.findMovieEventsById(id);
     }
